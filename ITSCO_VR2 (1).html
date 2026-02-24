@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITSCO — Instituto Tecnológico Superior de Cosamaloapan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: { 50:'#eef2ff', 100:'#dce8ff', 200:'#b3ceff', 300:'#80aaff', 400:'#4d82f5', 500:'#1e5fd9', 600:'#1a4bb5', 700:'#143a8a', 800:'#0f2b65', 900:'#0a1c42' },
+            crimson: { 400:'#f05252', 500:'#e02424', 600:'#c81e1e', 700:'#9b1c1c' },
+            gold: { 300:'#fcd34d', 400:'#fbbf24', 500:'#f59e0b' }
+          },
+          fontFamily: {
+            sans: ['Barlow', 'sans-serif'],
+            display: ['Barlow Condensed', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-gray-800 dark:bg-navy-900 dark:text-gray-100 transition-colors duration-300">
+
+  <!-- TOP BAR GOBIERNO -->
+  <div class="topbar text-white text-xs py-2 hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 flex justify-center gap-0 flex-wrap">
+      <a href="https://www.gob.mx/gobierno" target="_blank" class="px-4 py-1 hover:opacity-75 transition border-r border-white/20 flex items-center gap-1.5">
+        <i class="fas fa-landmark"></i> Gobierno de México
+      </a>
+      <a href="https://www.gob.mx/presidencia" target="_blank" class="px-4 py-1 hover:opacity-75 transition border-r border-white/20 flex items-center gap-1.5">
+        <i class="fas fa-user-tie"></i> Presidencia
+      </a>
+      <a href="https://www.gob.mx/sep" target="_blank" class="px-4 py-1 hover:opacity-75 transition border-r border-white/20 flex items-center gap-1.5">
+        <i class="fas fa-graduation-cap"></i> SEP
+      </a>
+      <a href="https://www.tecnm.mx" target="_blank" class="px-4 py-1 hover:opacity-75 transition flex items-center gap-1.5">
+        <i class="fas fa-university"></i> TecNM
+      </a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar-glass sticky top-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between py-3">
+        <!-- LOGO -->
+        <a href="#inicio" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform overflow-hidden">
+            <img src="https://www.cosamaloapan.tecnm.mx/images/logo_itsco.png" alt="ITSCO" class="w-10 h-10 object-contain">
+          </div>
+          <div class="hidden sm:block">
+            <div class="font-display font-800 text-white text-lg leading-tight">ITS<span class="text-gold-400">CO</span></div>
+            <div class="text-blue-200 text-xs leading-none">Cosamaloapan · TecNM</div>
+          </div>
+        </a>
+
+        <!-- DESKTOP NAV -->
+        <ul class="hidden lg:flex items-center gap-1">
+          <li>
+            <a href="#inicio" class="nav-link-underline text-white hover:text-gold-300 font-medium text-sm px-3 py-2 transition-colors">Inicio</a>
+          </li>
+          <li class="nav-dropdown">
+            <button class="nav-link-underline text-white hover:text-gold-300 font-medium text-sm px-3 py-2 transition-colors flex items-center gap-1">
+              Conócenos <i class="fas fa-chevron-down text-xs opacity-60"></i>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="#historia"><i class="fas fa-book mr-2 text-navy-600 text-xs"></i>Historia</a>
+              <a href="#mision-vision"><i class="fas fa-eye mr-2 text-navy-600 text-xs"></i>Misión y Visión</a>
+              <a href="#codigo-conducta"><i class="fas fa-handshake mr-2 text-navy-600 text-xs"></i>Código de Conducta</a>
+              <a href="#finanzas"><i class="fas fa-chart-bar mr-2 text-navy-600 text-xs"></i>Finanzas</a>
+              <a href="#estatuto"><i class="fas fa-gavel mr-2 text-navy-600 text-xs"></i>Estatuto Escolar</a>
+              <a href="#sgi"><i class="fas fa-cogs mr-2 text-navy-600 text-xs"></i>Sistema de Gestión Integral</a>
+              <a href="#organigrama"><i class="fas fa-sitemap mr-2 text-navy-600 text-xs"></i>Organigrama</a>
+            </div>
+          </li>
+          <li class="nav-dropdown">
+            <button class="nav-link-underline text-white hover:text-gold-300 font-medium text-sm px-3 py-2 transition-colors flex items-center gap-1">
+              Oferta Educativa <i class="fas fa-chevron-down text-xs opacity-60"></i>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="#carrera-industrial"><i class="fas fa-industry mr-2 text-navy-600 text-xs"></i>Ing. Industrial</a>
+              <a href="#carrera-sistemas"><i class="fas fa-laptop-code mr-2 text-navy-600 text-xs"></i>Ing. en Sistemas Computacionales</a>
+              <a href="#carrera-gestion"><i class="fas fa-briefcase mr-2 text-navy-600 text-xs"></i>Ing. en Gestión Empresarial</a>
+              <a href="#carrera-informatica"><i class="fas fa-database mr-2 text-navy-600 text-xs"></i>Ing. en Informática</a>
+              <a href="#carrera-mecanica"><i class="fas fa-wrench mr-2 text-navy-600 text-xs"></i>Ing. Mecánica</a>
+              <a href="#carrera-electromecanica"><i class="fas fa-bolt mr-2 text-navy-600 text-xs"></i>Ing. Electromecánica</a>
+              <a href="#carrera-petrolera"><i class="fas fa-oil-well mr-2 text-navy-600 text-xs"></i>Ing. Petrolera</a>
+            </div>
+          </li>
+          <li class="nav-dropdown">
+            <button class="nav-link-underline text-white hover:text-gold-300 font-medium text-sm px-3 py-2 transition-colors flex items-center gap-1">
+              Extensiones <i class="fas fa-chevron-down text-xs opacity-60"></i>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="#extension-jrc"><i class="fas fa-map-marker-alt mr-2 text-navy-600 text-xs"></i>Juan Rodríguez Clara</a>
+              <a href="#extension-cac"><i class="fas fa-map-marker-alt mr-2 text-navy-600 text-xs"></i>Carlos A. Carrillo</a>
+            </div>
+          </li>
+          <li>
+            <a href="#noticias" class="nav-link-underline text-white hover:text-gold-300 font-medium text-sm px-3 py-2 transition-colors">Noticias</a>
+          </li>
+          <li>
+            <a href="#contacto" class="nav-link-underline text-white hover:text-gold-300 font-medium text-sm px-3 py-2 transition-colors">Contacto</a>
+          </li>
+        </ul>
+
+        <!-- RIGHT BUTTONS -->
+        <div class="flex items-center gap-2">
+          <button id="darkToggle" class="w-9 h-9 rounded-full bg-navy-700 hover:bg-gold-500 hover:text-navy-900 text-white transition-all duration-300 flex items-center justify-center text-sm">
+            <i class="fas fa-moon" id="darkIcon"></i>
+          </button>
+          <button id="mobileMenuBtn" class="lg:hidden w-9 h-9 rounded-full bg-navy-700 hover:bg-navy-600 text-white flex items-center justify-center transition-colors">
+            <i class="fas fa-bars" id="mobileIcon"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div id="mobileMenu" class="mobile-menu lg:hidden">
+        <div class="py-3 pb-4 space-y-1 border-t border-white/10">
+          <a href="#inicio" class="block px-4 py-2.5 text-white hover:bg-navy-700 rounded-lg transition text-sm font-medium"><i class="fas fa-home w-5 mr-2"></i>Inicio</a>
+          <!-- Conócenos sub -->
+          <div class="px-4 py-2.5 text-blue-200 text-xs font-semibold uppercase tracking-wider mt-2">Conócenos</div>
+          <a href="#historia" class="block px-6 py-2 text-blue-100 hover:bg-navy-700 rounded-lg transition text-sm"><i class="fas fa-book w-5 mr-2"></i>Historia</a>
+          <a href="#mision-vision" class="block px-6 py-2 text-blue-100 hover:bg-navy-700 rounded-lg transition text-sm"><i class="fas fa-eye w-5 mr-2"></i>Misión y Visión</a>
+          <a href="#organigrama" class="block px-6 py-2 text-blue-100 hover:bg-navy-700 rounded-lg transition text-sm"><i class="fas fa-sitemap w-5 mr-2"></i>Organigrama</a>
+          <!-- Oferta -->
+          <div class="px-4 py-2.5 text-blue-200 text-xs font-semibold uppercase tracking-wider mt-2">Oferta Educativa</div>
+          <a href="#carrera-sistemas" class="block px-6 py-2 text-blue-100 hover:bg-navy-700 rounded-lg transition text-sm"><i class="fas fa-laptop-code w-5 mr-2"></i>Ingeniería en Sistemas</a>
+          <a href="#carrera-industrial" class="block px-6 py-2 text-blue-100 hover:bg-navy-700 rounded-lg transition text-sm"><i class="fas fa-industry w-5 mr-2"></i>Ingeniería Industrial</a>
+          <a href="#carrera-gestion" class="block px-6 py-2 text-blue-100 hover:bg-navy-700 rounded-lg transition text-sm"><i class="fas fa-briefcase w-5 mr-2"></i>Gestión Empresarial</a>
+          <!-- Más -->
+          <a href="#noticias" class="block px-4 py-2.5 text-white hover:bg-navy-700 rounded-lg transition text-sm font-medium mt-2"><i class="fas fa-newspaper w-5 mr-2"></i>Noticias</a>
+          <a href="#contacto" class="block px-4 py-2.5 text-white hover:bg-navy-700 rounded-lg transition text-sm font-medium"><i class="fas fa-envelope w-5 mr-2"></i>Contacto</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO CAROUSEL -->
+  <section id="inicio" class="hero">
+    <div id="heroSlides">
+      <div class="hero-slide active">
+        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920" alt="Campus">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920" alt="Estudiantes">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920" alt="Innovación">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=1920" alt="Investigación">
+        <div class="hero-overlay"></div>
+      </div>
+    </div>
+
+    <!-- HERO CONTENT -->
+    <div class="absolute inset-0 flex items-center z-10">
+      <div class="max-w-7xl mx-auto px-6 w-full">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 bg-gold-500/20 border border-gold-400/40 text-gold-300 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 animate-fade-up">
+            <i class="fas fa-star text-gold-400"></i> TecNM · Cosamaloapan, Veracruz
+          </div>
+          <h1 id="heroTitle" class="font-display text-5xl md:text-7xl font-800 text-white leading-none mb-4 animate-fade-up-delay" style="text-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+            Bienvenido al<br><span class="text-gold-400">ITSCO</span>
+          </h1>
+          <p id="heroSubtitle" class="text-blue-100 text-lg md:text-xl mb-8 animate-fade-up-delay-2 max-w-lg">
+            Formando profesionistas de excelencia comprometidos con el desarrollo de México.
+          </p>
+          <div class="flex flex-wrap gap-3 animate-fade-up-delay-2">
+            <a href="#oferta-educativa" class="px-6 py-3 bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold rounded-xl shadow-lg transition-all hover:shadow-gold-500/30 hover:shadow-xl hover:-translate-y-0.5 text-sm">
+              <i class="fas fa-graduation-cap mr-2"></i>Oferta Académica
+            </a>
+            <a href="#contacto" class="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold rounded-xl transition-all hover:-translate-y-0.5 text-sm backdrop-blur-sm">
+              <i class="fas fa-envelope mr-2"></i>Contáctanos
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAROUSEL CONTROLS -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2" id="carouselDots"></div>
+    <button id="prevSlide" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 bg-white/10 hover:bg-gold-500/80 border border-white/20 text-white rounded-full transition-all hover:scale-110 backdrop-blur-sm">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button id="nextSlide" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 bg-white/10 hover:bg-gold-500/80 border border-white/20 text-white rounded-full transition-all hover:scale-110 backdrop-blur-sm">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <!-- SCROLL INDICATOR -->
+    <div class="absolute bottom-8 right-8 z-20 animate-float hidden md:block">
+      <a href="#acceso-rapido" class="flex flex-col items-center gap-1 text-white/50 hover:text-white transition text-xs">
+        <span>Explorar</span>
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="bg-navy-800 dark:bg-navy-900 border-b border-navy-700">
+    <div class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div>
+        <div class="font-display text-3xl font-800 text-gold-400 counter" data-target="3500">0+</div>
+        <div class="text-blue-200 text-sm mt-1">Estudiantes Activos</div>
+      </div>
+      <div>
+        <div class="font-display text-3xl font-800 text-gold-400">7</div>
+        <div class="text-blue-200 text-sm mt-1">Ingenierías</div>
+      </div>
+      <div>
+        <div class="font-display text-3xl font-800 text-gold-400 counter" data-target="28">0+</div>
+        <div class="text-blue-200 text-sm mt-1">Años de Excelencia</div>
+      </div>
+      <div>
+        <div class="font-display text-3xl font-800 text-gold-400 counter" data-target="150">0+</div>
+        <div class="text-blue-200 text-sm mt-1">Empresas Vinculadas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACCESO RÁPIDO -->
+  <section id="acceso-rapido" class="py-16 bg-gray-50 dark:bg-navy-800">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <div class="accent-line mx-auto mb-3"></div>
+        <h2 class="section-heading text-3xl md:text-4xl text-navy-800 dark:text-white">Acceso <span class="text-navy-600 dark:text-gold-400">Rápido</span></h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <!-- Card 1 -->
+        <div class="access-card p-7 text-white text-center" style="background: linear-gradient(135deg, #143a8a 0%, #1a4bb5 100%);">
+          <div class="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-hands-helping text-2xl text-gold-400"></i>
+          </div>
+          <h3 class="font-display font-700 text-lg mb-1">Servicio Social</h3>
+          <p class="text-blue-200 text-xs">Consulta tu avance</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="access-card p-7 text-white text-center" style="background: linear-gradient(135deg, #065f46 0%, #059669 100%);">
+          <div class="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-hand-holding-usd text-2xl text-green-200"></i>
+          </div>
+          <h3 class="font-display font-700 text-lg mb-1">Becas</h3>
+          <p class="text-green-200 text-xs">Información y trámites</p>
+        </div>
+        <!-- Card 3 -->
+        <a href="https://www.cosamaloapan.tecnm.mx" target="_blank" class="access-card p-7 text-white text-center" style="background: linear-gradient(135deg, #7c2d12 0%, #c2410c 100%);">
+          <div class="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-language text-2xl text-orange-200"></i>
+          </div>
+          <h3 class="font-display font-700 text-lg mb-1">CLE</h3>
+          <p class="text-orange-200 text-xs">Centro de Lenguas</p>
+        </a>
+        <!-- Card 4 -->
+        <div class="access-card p-7 text-white text-center" style="background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%);">
+          <div class="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-flask text-2xl text-purple-200"></i>
+          </div>
+          <h3 class="font-display font-700 text-lg mb-1">Investigación</h3>
+          <p class="text-purple-200 text-xs">Proyectos y cuerpos académicos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONÓCENOS -->
+  <section id="conocenos" class="py-16 md:py-24 bg-white dark:bg-navy-800">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="accent-line mb-4"></div>
+          <h2 class="section-heading text-3xl md:text-5xl text-navy-800 dark:text-white mb-6">
+            Más de <span class="text-navy-600 dark:text-gold-400">28 años</span><br>formando ingenieros
+          </h2>
+          <!-- TABS -->
+          <div class="flex gap-2 mb-6 flex-wrap">
+            <button class="tab-btn active text-sm dark:text-white" data-tab="historia">Historia</button>
+            <button class="tab-btn text-sm text-gray-600 dark:text-gray-300" data-tab="mision">Misión</button>
+            <button class="tab-btn text-sm text-gray-600 dark:text-gray-300" data-tab="vision">Visión</button>
+            <button class="tab-btn text-sm text-gray-600 dark:text-gray-300" data-tab="valores">Valores</button>
+          </div>
+          <div id="historia" class="tab-pane active">
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+              El Instituto Tecnológico Superior de Cosamaloapan fue fundado para atender la demanda de educación superior tecnológica en la región del Papaloapan, en el estado de Veracruz.
+            </p>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              Desde su creación, el ITSCO ha crecido de manera sostenida, ofreciendo programas de ingeniería acreditados y formando profesionales capaces de responder a los retos del mercado laboral regional y nacional.
+            </p>
+          </div>
+          <div id="mision" class="tab-pane">
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+              Formar profesionales de excelencia en ciencias y tecnologías mediante programas educativos de calidad, vinculación productiva y valores humanos, contribuyendo al desarrollo sustentable de la región y el país.
+            </p>
+          </div>
+          <div id="vision" class="tab-pane">
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              Ser una institución de educación superior tecnológica reconocida a nivel nacional e internacional por la calidad de sus egresados, su infraestructura, su impacto social y su participación activa en la generación y aplicación del conocimiento.
+            </p>
+          </div>
+          <div id="valores" class="tab-pane">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm"><i class="fas fa-check-circle text-navy-600 dark:text-gold-400"></i> Integridad</div>
+              <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm"><i class="fas fa-check-circle text-navy-600 dark:text-gold-400"></i> Responsabilidad</div>
+              <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm"><i class="fas fa-check-circle text-navy-600 dark:text-gold-400"></i> Respeto</div>
+              <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm"><i class="fas fa-check-circle text-navy-600 dark:text-gold-400"></i> Innovación</div>
+              <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm"><i class="fas fa-check-circle text-navy-600 dark:text-gold-400"></i> Excelencia</div>
+              <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm"><i class="fas fa-check-circle text-navy-600 dark:text-gold-400"></i> Compromiso</div>
+            </div>
+          </div>
+        </div>
+        <!-- IMAGE SIDE -->
+        <div class="relative hidden lg:block">
+          <div class="rounded-2xl overflow-hidden h-96 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800" alt="Campus ITSCO" class="w-full h-full object-cover">
+          </div>
+          <!-- FLOATING BADGE -->
+          <div class="absolute -bottom-6 -left-6 bg-navy-800 dark:bg-navy-900 text-white p-5 rounded-2xl shadow-2xl">
+            <div class="font-display text-4xl font-800 text-gold-400">ISO</div>
+            <div class="text-blue-200 text-sm">Certificado 9001:2015</div>
+          </div>
+          <div class="absolute -top-4 -right-4 w-20 h-20 bg-gold-400/20 rounded-full animate-float"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA EDUCATIVA -->
+  <section id="oferta-educativa" class="py-16 md:py-24 bg-gray-50 dark:bg-navy-900">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <div class="accent-line mx-auto mb-4"></div>
+        <h2 class="section-heading text-3xl md:text-4xl text-navy-800 dark:text-white mb-3">
+          Oferta <span class="text-navy-600 dark:text-gold-400">Educativa</span>
+        </h2>
+        <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">7 programas de ingeniería acreditados para impulsar tu carrera profesional</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Carrera cards -->
+        <div id="carrera-sistemas" class="career-card bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-sm hover:shadow-lg cursor-pointer group">
+          <div class="w-12 h-12 bg-navy-50 dark:bg-navy-700 rounded-xl flex items-center justify-center mb-4 group-hover:bg-navy-600 transition-colors">
+            <i class="fas fa-laptop-code text-navy-600 dark:text-gold-400 group-hover:text-white dark:group-hover:text-gold-400 transition-colors"></i>
+          </div>
+          <h3 class="font-display font-700 text-navy-800 dark:text-white text-lg mb-2">Ing. en Sistemas Computacionales</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Desarrolla software, redes y sistemas de información para las empresas del siglo XXI.</p>
+          <span class="inline-block text-xs font-semibold text-navy-600 dark:text-gold-400 bg-navy-50 dark:bg-navy-700 px-3 py-1 rounded-full">8 Semestres</span>
+        </div>
+        <div id="carrera-industrial" class="career-card bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-sm hover:shadow-lg cursor-pointer group">
+          <div class="w-12 h-12 bg-navy-50 dark:bg-navy-700 rounded-xl flex items-center justify-center mb-4 group-hover:bg-navy-600 transition-colors">
+            <i class="fas fa-industry text-navy-600 dark:text-gold-400 group-hover:text-white dark:group-hover:text-gold-400 transition-colors"></i>
+          </div>
+          <h3 class="font-display font-700 text-navy-800 dark:text-white text-lg mb-2">Ingeniería Industrial</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Optimiza procesos productivos y cadenas de suministro con enfoque en calidad.</p>
+          <span class="inline-block text-xs font-semibold text-navy-600 dark:text-gold-400 bg-navy-50 dark:bg-navy-700 px-3 py-1 rounded-full">8 Semestres</span>
+        </div>
+        <div id="carrera-gestion" class="career-card bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-sm hover:shadow-lg cursor-pointer group">
+          <div class="w-12 h-12 bg-navy-50 dark:bg-navy-700 rounded-xl flex items-center justify-center mb-4 group-hover:bg-navy-600 transition-colors">
+            <i class="fas fa-briefcase text-navy-600 dark:text-gold-400 group-hover:text-white dark:group-hover:text-gold-400 transition-colors"></i>
+          </div>
+          <h3 class="font-display font-700 text-navy-800 dark:text-white text-lg mb-2">Ing. en Gestión Empresarial</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Lidera organizaciones con visión tecnológica, financiera y estratégica.</p>
+          <span class="inline-block text-xs font-semibold text-navy-600 dark:text-gold-400 bg-navy-50 dark:bg-navy-700 px-3 py-1 rounded-full">8 Semestres</span>
+        </div>
+        <div id="carrera-informatica" class="career-card bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-sm hover:shadow-lg cursor-pointer group">
+          <div class="w-12 h-12 bg-navy-50 dark:bg-navy-700 rounded-xl flex items-center justify-center mb-4 group-hover:bg-navy-600 transition-colors">
+            <i class="fas fa-database text-navy-600 dark:text-gold-400 group-hover:text-white dark:group-hover:text-gold-400 transition-colors"></i>
+          </div>
+          <h3 class="font-display font-700 text-navy-800 dark:text-white text-lg mb-2">Ingeniería en Informática</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Gestiona sistemas de información y aplica tecnología en la solución de problemas.</p>
+          <span class="inline-block text-xs font-semibold text-navy-600 dark:text-gold-400 bg-navy-50 dark:bg-navy-700 px-3 py-1 rounded-full">8 Semestres</span>
+        </div>
+        <div id="carrera-mecanica" class="career-card bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-sm hover:shadow-lg cursor-pointer group">
+          <div class="w-12 h-12 bg-navy-50 dark:bg-navy-700 rounded-xl flex items-center justify-center mb-4 group-hover:bg-navy-600 transition-colors">
+            <i class="fas fa-wrench text-navy-600 dark:text-gold-400 group-hover:text-white dark:group-hover:text-gold-400 transition-colors"></i>
+          </div>
+          <h3 class="font-display font-700 text-navy-800 dark:text-white text-lg mb-2">Ingeniería Mecánica</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Diseña, construye y mantiene sistemas mecánicos para la industria moderna.</p>
+          <span class="inline-block text-xs font-semibold text-navy-600 dark:text-gold-400 bg-navy-50 dark:bg-navy-700 px-3 py-1 rounded-full">8 Semestres</span>
+        </div>
+        <div id="carrera-electromecanica" class="career-card bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-sm hover:shadow-lg cursor-pointer group">
+          <div class="w-12 h-12 bg-navy-50 dark:bg-navy-700 rounded-xl flex items-center justify-center mb-4 group-hover:bg-navy-600 transition-colors">
+            <i class="fas fa-bolt text-navy-600 dark:text-gold-400 group-hover:text-white dark:group-hover:text-gold-400 transition-colors"></i>
+          </div>
+          <h3 class="font-display font-700 text-navy-800 dark:text-white text-lg mb-2">Ingeniería Electromecánica</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Integra sistemas eléctricos y mecánicos para automatización industrial.</p>
+          <span class="inline-block text-xs font-semibold text-navy-600 dark:text-gold-400 bg-navy-50 dark:bg-navy-700 px-3 py-1 rounded-full">8 Semestres</span>
+        </div>
+        <div id="carrera-petrolera" class="career-card bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-sm hover:shadow-lg cursor-pointer group md:col-start-2 lg:col-start-auto">
+          <div class="w-12 h-12 bg-navy-50 dark:bg-navy-700 rounded-xl flex items-center justify-center mb-4 group-hover:bg-navy-600 transition-colors">
+            <i class="fas fa-oil-well text-navy-600 dark:text-gold-400 group-hover:text-white dark:group-hover:text-gold-400 transition-colors"></i>
+          </div>
+          <h3 class="font-display font-700 text-navy-800 dark:text-white text-lg mb-2">Ingeniería Petrolera</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Explora, extrae y procesa recursos petroleros con responsabilidad ambiental.</p>
+          <span class="inline-block text-xs font-semibold text-navy-600 dark:text-gold-400 bg-navy-50 dark:bg-navy-700 px-3 py-1 rounded-full">8 Semestres</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTENSIONES -->
+  <section class="py-14 bg-navy-800 dark:bg-navy-900">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <div class="accent-line mx-auto mb-4"></div>
+        <h2 class="section-heading text-3xl text-white mb-2">Nuestras <span class="text-gold-400">Extensiones</span></h2>
+        <p class="text-blue-300 text-sm">Ampliamos el acceso a la educación tecnológica en la región</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div id="extension-jrc" class="bg-navy-700/50 border border-navy-600 rounded-2xl p-7 hover:border-gold-500/50 transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-gold-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-gold-500/30 transition-colors">
+              <i class="fas fa-map-marker-alt text-gold-400"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-700 text-white text-lg mb-1">Juan Rodríguez Clara</h3>
+              <p class="text-blue-300 text-sm">Extensión con programas de ingeniería para la comunidad de Juan Rodríguez Clara, Veracruz.</p>
+            </div>
+          </div>
+        </div>
+        <div id="extension-cac" class="bg-navy-700/50 border border-navy-600 rounded-2xl p-7 hover:border-gold-500/50 transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-gold-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-gold-500/30 transition-colors">
+              <i class="fas fa-map-marker-alt text-gold-400"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-700 text-white text-lg mb-1">Carlos A. Carrillo</h3>
+              <p class="text-blue-300 text-sm">Extensión que atiende las necesidades educativas de la región de Carlos A. Carrillo, Veracruz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTICIAS -->
+  <section id="noticias" class="py-16 md:py-24 bg-white dark:bg-navy-800">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
+        <div>
+          <div class="accent-line mb-3"></div>
+          <h2 class="section-heading text-3xl md:text-4xl text-navy-800 dark:text-white">
+            Últimas <span class="text-navy-600 dark:text-gold-400">Noticias</span>
+          </h2>
+        </div>
+        <a href="#" class="text-navy-600 dark:text-gold-400 hover:underline text-sm font-semibold flex items-center gap-1">
+          Ver todas <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="news-card bg-white dark:bg-navy-700 shadow-sm dark:shadow-navy-900/50 hover:shadow-xl border border-gray-100 dark:border-navy-600">
+          <div class="h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600" alt="Admisión" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-semibold text-navy-600 dark:text-gold-400 bg-navy-50 dark:bg-navy-600 px-2 py-0.5 rounded-full">Convocatoria</span>
+              <span class="text-xs text-gray-400"><i class="far fa-calendar mr-1"></i>5 Feb 2026</span>
+            </div>
+            <h4 class="font-display font-700 text-navy-800 dark:text-white text-lg mb-2 leading-tight">Proceso de Admisión 2026</h4>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Inicia el proceso de admisión para el semestre agosto-diciembre 2026. Conoce los requisitos y fechas importantes.</p>
+            <a href="#" class="text-navy-600 dark:text-gold-400 text-sm font-semibold hover:underline">Leer más →</a>
+          </div>
+        </div>
+        <div class="news-card bg-white dark:bg-navy-700 shadow-sm dark:shadow-navy-900/50 hover:shadow-xl border border-gray-100 dark:border-navy-600">
+          <div class="h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?w=600" alt="Congreso" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-semibold text-navy-600 dark:text-gold-400 bg-navy-50 dark:bg-navy-600 px-2 py-0.5 rounded-full">Evento</span>
+              <span class="text-xs text-gray-400"><i class="far fa-calendar mr-1"></i>1 Feb 2026</span>
+            </div>
+            <h4 class="font-display font-700 text-navy-800 dark:text-white text-lg mb-2 leading-tight">Conferencia de Innovación</h4>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">El ITSCO será sede del Congreso Nacional de Innovación y Desarrollo Tecnológico.</p>
+            <a href="#" class="text-navy-600 dark:text-gold-400 text-sm font-semibold hover:underline">Leer más →</a>
+          </div>
+        </div>
+        <div class="news-card bg-white dark:bg-navy-700 shadow-sm dark:shadow-navy-900/50 hover:shadow-xl border border-gray-100 dark:border-navy-600">
+          <div class="h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600" alt="Convenio" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-semibold text-navy-600 dark:text-gold-400 bg-navy-50 dark:bg-navy-600 px-2 py-0.5 rounded-full">Vinculación</span>
+              <span class="text-xs text-gray-400"><i class="far fa-calendar mr-1"></i>28 Ene 2026</span>
+            </div>
+            <h4 class="font-display font-700 text-navy-800 dark:text-white text-lg mb-2 leading-tight">Convenio de Colaboración</h4>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Se firma convenio con empresas líderes para prácticas profesionales y residencias.</p>
+            <a href="#" class="text-navy-600 dark:text-gold-400 text-sm font-semibold hover:underline">Leer más →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTOS / TALLERES -->
+  <section class="py-16 bg-gray-50 dark:bg-navy-900">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <div class="accent-line mx-auto mb-4"></div>
+        <h2 class="section-heading text-3xl md:text-4xl text-navy-800 dark:text-white mb-2">Eventos y <span class="text-navy-600 dark:text-gold-400">Talleres</span></h2>
+        <p class="text-gray-500 dark:text-gray-400 text-sm max-w-lg mx-auto">Participa en nuestros eventos académicos, talleres y conferencias</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100 dark:border-navy-700">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-navy-700 px-3 py-1 rounded-full">Taller</span>
+            <span class="text-xs text-gray-400"><i class="far fa-calendar-alt mr-1"></i>9-11 Feb 2026</span>
+          </div>
+          <h3 class="font-display font-700 text-navy-800 dark:text-white text-lg mb-2">3er Taller de Registro y Control</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Capacitación especializada para personal administrativo. Instituto Tecnológico de Tlalnepantla.</p>
+        </div>
+        <div class="bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100 dark:border-navy-700">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold text-green-700 dark:text-green-300 bg-green-50 dark:bg-navy-700 px-3 py-1 rounded-full">Congreso</span>
+            <span class="text-xs text-gray-400"><i class="far fa-calendar-alt mr-1"></i>15-16 Mar 2026</span>
+          </div>
+          <h3 class="font-display font-700 text-navy-800 dark:text-white text-lg mb-2">Congreso de Innovación ITSCO 2026</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Presentación de proyectos estudiantiles y trabajos de investigación de cuerpos académicos.</p>
+        </div>
+        <div class="bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100 dark:border-navy-700">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-navy-700 px-3 py-1 rounded-full">Feria</span>
+            <span class="text-xs text-gray-400"><i class="far fa-calendar-alt mr-1"></i>Abr 2026</span>
+          </div>
+          <h3 class="font-display font-700 text-navy-800 dark:text-white text-lg mb-2">Feria del Empleo TecNM 2026</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Conecta con más de 50 empresas de la región y el país en busca de talento tecnológico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section id="contacto" class="py-16 md:py-24 bg-white dark:bg-navy-800">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <div class="accent-line mb-4"></div>
+          <h2 class="section-heading text-3xl md:text-4xl text-navy-800 dark:text-white mb-6">
+            Visítanos o <span class="text-navy-600 dark:text-gold-400">Contáctanos</span>
+          </h2>
+          <div class="space-y-5">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-navy-50 dark:bg-navy-700 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fas fa-map-marker-alt text-navy-600 dark:text-gold-400"></i>
+              </div>
+              <div>
+                <div class="font-semibold text-navy-800 dark:text-white text-sm mb-0.5">Dirección</div>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Carretera Cosamaloapan-La Isla km. 16.5,<br>Cosamaloapan de Carpio, Veracruz, México</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-navy-50 dark:bg-navy-700 rounded-xl flex items-center justify-center shrink-0">
+                <i class="fas fa-phone text-navy-600 dark:text-gold-400"></i>
+              </div>
+              <div>
+                <div class="font-semibold text-navy-800 dark:text-white text-sm mb-0.5">Teléfono</div>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">(288) 882 5424</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-navy-50 dark:bg-navy-700 rounded-xl flex items-center justify-center shrink-0">
+                <i class="fas fa-envelope text-navy-600 dark:text-gold-400"></i>
+              </div>
+              <div>
+                <div class="font-semibold text-navy-800 dark:text-white text-sm mb-0.5">Correo</div>
+                <p class="text-gray-500 dark:text-gray-400 text-sm"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4d29243f1224393e2e220d2e223e2c202c21222c3d2c236339282e2320632035">[email&#160;protected]</a></p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-navy-50 dark:bg-navy-700 rounded-xl flex items-center justify-center shrink-0">
+                <i class="fas fa-clock text-navy-600 dark:text-gold-400"></i>
+              </div>
+              <div>
+                <div class="font-semibold text-navy-800 dark:text-white text-sm mb-0.5">Horario</div>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Lunes a Viernes: 8:00 AM — 6:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <!-- REDES -->
+          <div class="flex gap-3 mt-8">
+            <a href="#" class="w-10 h-10 bg-navy-800 dark:bg-navy-700 hover:bg-navy-600 text-white rounded-xl flex items-center justify-center transition-all hover:-translate-y-0.5">
+              <i class="fab fa-facebook-f text-sm"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-navy-800 dark:bg-navy-700 hover:bg-navy-600 text-white rounded-xl flex items-center justify-center transition-all hover:-translate-y-0.5">
+              <i class="fab fa-twitter text-sm"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-navy-800 dark:bg-navy-700 hover:bg-navy-600 text-white rounded-xl flex items-center justify-center transition-all hover:-translate-y-0.5">
+              <i class="fab fa-instagram text-sm"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-navy-800 dark:bg-navy-700 hover:bg-navy-600 text-white rounded-xl flex items-center justify-center transition-all hover:-translate-y-0.5">
+              <i class="fab fa-youtube text-sm"></i>
+            </a>
+          </div>
+        </div>
+        <!-- MAP -->
+        <div class="map-container h-80 lg:h-full min-h-80">
+          <iframe
+            width="100%"
+            height="100%"
+            style="min-height: 350px; border: 0;"
+            src="https://maps.google.com/maps?q=Instituto+Tecnológico+Superior+de+Cosamaloapan,+Veracruz&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-900 text-white pt-14 pb-6">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8 mb-10">
+        <!-- BRAND -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden">
+              <img src="https://www.cosamaloapan.tecnm.mx/images/logo_itsco.png" alt="ITSCO" class="w-10 h-10 object-contain">
+            </div>
+            <div>
+              <div class="font-display font-800 text-xl text-white">ITS<span class="text-gold-400">CO</span></div>
+              <div class="text-blue-400 text-xs">Instituto Tecnológico Superior de Cosamaloapan</div>
+            </div>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed max-w-xs">Formando profesionistas de excelencia comprometidos con el desarrollo sustentable de México y la región del Papaloapan.</p>
+        </div>
+        <!-- LINKS -->
+        <div>
+          <h5 class="text-gold-400 font-semibold text-sm uppercase tracking-wider mb-4">Institución</h5>
+          <a href="#conocenos" class="footer-link text-sm">Conócenos</a>
+          <a href="#oferta-educativa" class="footer-link text-sm">Oferta Educativa</a>
+          <a href="#noticias" class="footer-link text-sm">Noticias</a>
+          <a href="#" class="footer-link text-sm">Becas</a>
+          <a href="#" class="footer-link text-sm">Servicio Social</a>
+        </div>
+        <div>
+          <h5 class="text-gold-400 font-semibold text-sm uppercase tracking-wider mb-4">Comunidad</h5>
+          <a href="https://www.tecnm.mx" target="_blank" class="footer-link text-sm">TecNM Nacional</a>
+          <a href="https://www.gob.mx/sep" target="_blank" class="footer-link text-sm">SEP</a>
+          <a href="https://www.gob.mx" target="_blank" class="footer-link text-sm">Gob.mx</a>
+          <a href="#" class="footer-link text-sm">Transparencia</a>
+          <a href="#contacto" class="footer-link text-sm">Contacto</a>
+        </div>
+      </div>
+      <div class="border-t border-navy-700 pt-6 flex flex-col md:flex-row items-center justify-between gap-2">
+        <p class="text-slate-500 text-xs">© 2026 Instituto Tecnológico Superior de Cosamaloapan · TecNM. Todos los derechos reservados.</p>
+        <p class="text-slate-600 text-xs">Cosamaloapan de Carpio, Veracruz, México</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button id="scrollTop" class="fixed bottom-6 right-6 z-40 w-11 h-11 bg-navy-700 hover:bg-gold-500 text-white rounded-full shadow-lg transition-all hover:scale-110 opacity-0 pointer-events-none flex items-center justify-center">
+    <i class="fas fa-arrow-up text-sm"></i>
+  </button>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+  <!-- FOOTER GOBIERNO DE MÉXICO -->
+  <footer style="background: linear-gradient(160deg, #1a5c4a 0%, #1e6b55 50%, #175040 100%); padding: 40px 0 28px; position: relative; overflow: hidden;">
+    <!-- Decorative watermark circles -->
+    <div style="position:absolute;top:50%;left:5%;transform:translateY(-50%);width:280px;height:280px;border-radius:50%;border:1px solid rgba(255,255,255,0.05);pointer-events:none;"></div>
+    <div style="position:absolute;top:50%;left:5%;transform:translateY(-50%);width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,0.05);pointer-events:none;"></div>
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:36px 24px;margin-bottom:28px;align-items:start;">
+
+        <!-- Logo Gobierno -->
+        <div style="display:flex;align-items:center;gap:12px;">
+          <img src="https://www.gob.mx/cms/uploads/image/file/396147/escudo-blanco.png"
+               alt="Escudo México"
+               style="height:58px;width:auto;flex-shrink:0;"
+               onerror="this.style.display='none'">
+          <div style="font-family:Arial,sans-serif;line-height:1.1;">
+            <div style="color:#fff;font-size:0.72rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;">GOBIERNO DE</div>
+            <div style="color:#fff;font-size:1.55rem;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;">MÉXICO</div>
+          </div>
+        </div>
+
+        <!-- Enlaces -->
+        <div>
+          <h6 style="color:#fff;font-family:Arial,sans-serif;font-size:0.95rem;font-weight:600;margin:0 0 14px;">Enlaces</h6>
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <a href="https://www.gob.mx/participa" target="_blank" rel="noopener" style="color:#9fd4c0;font-family:Arial,sans-serif;font-size:0.875rem;text-decoration:underline;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#9fd4c0'">Participa</a>
+            <a href="https://www.dof.gob.mx" target="_blank" rel="noopener" style="color:#9fd4c0;font-family:Arial,sans-serif;font-size:0.875rem;text-decoration:underline;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#9fd4c0'">Publicaciones Oficiales</a>
+            <a href="https://www.gob.mx/marco-juridico" target="_blank" rel="noopener" style="color:#9fd4c0;font-family:Arial,sans-serif;font-size:0.875rem;text-decoration:underline;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#9fd4c0'">Marco Jurídico</a>
+            <a href="https://www.plataformadetransparencia.org.mx" target="_blank" rel="noopener" style="color:#9fd4c0;font-family:Arial,sans-serif;font-size:0.875rem;text-decoration:underline;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#9fd4c0'">Plataforma Nacional de Transparencia</a>
+          </div>
+        </div>
+
+        <!-- ¿Qué es gob.mx? -->
+        <div>
+          <h6 style="color:#fff;font-family:Arial,sans-serif;font-size:0.95rem;font-weight:600;margin:0 0 10px;">¿Qué es gob.mx?</h6>
+          <p style="color:#b8ddd0;font-family:Arial,sans-serif;font-size:0.875rem;margin:0 0 14px;line-height:1.55;">
+            Es el portal único de trámites, información y participación ciudadana.
+            <a href="https://www.gob.mx/que-es-gobmx" target="_blank" rel="noopener" style="color:#9fd4c0;text-decoration:underline;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#9fd4c0'">Leer más</a>
+          </p>
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <a href="https://datos.gob.mx" target="_blank" rel="noopener" style="color:#9fd4c0;font-family:Arial,sans-serif;font-size:0.875rem;text-decoration:underline;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#9fd4c0'">Portal de datos abiertos</a>
+            <a href="https://www.gob.mx/accesibilidad" target="_blank" rel="noopener" style="color:#9fd4c0;font-family:Arial,sans-serif;font-size:0.875rem;text-decoration:underline;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#9fd4c0'">Declaración de accesibilidad</a>
+            <a href="https://www.gob.mx/privacidad" target="_blank" rel="noopener" style="color:#9fd4c0;font-family:Arial,sans-serif;font-size:0.875rem;text-decoration:underline;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#9fd4c0'">Aviso de privacidad integral</a>
+            <a href="https://www.gob.mx/privacidad-simplificado" target="_blank" rel="noopener" style="color:#9fd4c0;font-family:Arial,sans-serif;font-size:0.875rem;text-decoration:underline;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#9fd4c0'">Aviso de privacidad simplificado</a>
+            <a href="https://www.gob.mx/terminos" target="_blank" rel="noopener" style="color:#9fd4c0;font-family:Arial,sans-serif;font-size:0.875rem;text-decoration:underline;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#9fd4c0'">Términos y Condiciones</a>
+            <a href="https://www.gob.mx/seguridad" target="_blank" rel="noopener" style="color:#9fd4c0;font-family:Arial,sans-serif;font-size:0.875rem;text-decoration:underline;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#9fd4c0'">Política de seguridad</a>
+            <a href="https://www.gob.mx/sitemap" target="_blank" rel="noopener" style="color:#9fd4c0;font-family:Arial,sans-serif;font-size:0.875rem;text-decoration:underline;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#9fd4c0'">Mapa de sitio</a>
+          </div>
+        </div>
+
+        <!-- Denuncia y Síguenos -->
+        <div>
+          <a href="https://www.gob.mx/denuncia-servidores-publicos" target="_blank" rel="noopener"
+             style="color:#9fd4c0;font-family:Arial,sans-serif;font-size:0.875rem;text-decoration:underline;display:block;margin-bottom:22px;"
+             onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#9fd4c0'">Denuncia contra servidores públicos</a>
+          <h6 style="color:#fff;font-family:Arial,sans-serif;font-size:0.95rem;font-weight:600;margin:0 0 14px;">Síguenos en</h6>
+          <div style="display:flex;gap:14px;align-items:center;">
+            <a href="https://www.facebook.com/gobmx" target="_blank" rel="noopener"
+               title="Facebook"
+               style="color:#6a8faf;font-size:1.5rem;text-decoration:none;transition:color .2s;"
+               onmouseover="this.style.color='#9abfd8'" onmouseout="this.style.color='#6a8faf'">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/gobmx" target="_blank" rel="noopener"
+               title="X (Twitter)"
+               style="color:#6a8faf;font-size:1.5rem;text-decoration:none;transition:color .2s;"
+               onmouseover="this.style.color='#9abfd8'" onmouseout="this.style.color='#6a8faf'">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+
+</body>
+</html>
